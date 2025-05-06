@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <form>
+        <input id="newItemInput" type="text" name="item" placeholder="Things to do">
+        <input type="button" name="newItem" id="newItem" value="Add">
+    </form>
+
+    <ul id="list"></ul>
+
+    <p id="empty">Nothing here yet</p>
+
+    <script>
+        let list = [];
+        
+        function renderList() {
+            const listElement = document.querySelector('#list');
+            listElement.innerHTML = '';
+            
+            for (let i = 0; i < list.length; i++) {
+                const item = list[i];
+                const li = document.createElement('li');
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = item.checked;
+                checkbox.addEventListener('change', function() {
+                    toggleItem(i);
+                });
+                
+                const itemText = document.createElement('span');
+                itemText.textContent = " " + item.item + " ";
+                if (item.checked) {
+                    itemText.style.textDecoration = 'line-through';
+                }
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.addEventListener('click', function() {
+                    deleteItem(i);
+                });
+                
+                li.appendChild(checkbox);
+                li.appendChild(itemText);
+                li.appendChild(deleteBtn);
+                
+                listElement.appendChild(li);
+            }
+            
+            if (list.length === 0) {
+                document.querySelector('#empty').style.display = 'block';
+            } else {
+                document.querySelector('#empty').style.display = 'none';
+            }
+        }
+
+        function toggleItem(index) {
+            list[index].checked = !list[index].checked;
+            renderList();
+        }
+        
+        function deleteItem(index) {
+            list.splice(index, 1);
+            renderList();
+        }
+
+        function newItem(item) {
+            const new_item = {
+                item: item,
+                checked: false
+            }
+            list.push(new_item);
+            renderList();
+        }
+
+        const addButton = document.querySelector('#newItem');
+        addButton.addEventListener('click', function() {
+            const inputValue = document.querySelector('#newItemInput').value;
+            if (inputValue.trim() !== '') {
+                newItem(inputValue);
+                document.querySelector('#newItemInput').value = '';
+            }
+        });
+        
+        renderList();
+    </script>
+</body>
+</html>
