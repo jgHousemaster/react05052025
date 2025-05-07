@@ -1,0 +1,113 @@
+h1 {
+    color: red;
+}
+
+#par {
+    font-weight: lighter;
+    text-decoration: underline;
+    font-size: 20px;
+    word-spacing: 20px;
+}
+
+* {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#myh1 {
+    text-align: center;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.box-model {
+    border: 1px solid red;
+    width: 300px;
+    height: 50px;
+    padding: 20px;
+    margin: 40px 20px 20px;
+}
+
+h2 {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+.subheading {
+    color: blue;
+}
+
+h3 {
+    color: red;
+}
+
+#title {
+    color: orange !important;
+}
+
+.inheritance {
+    color: orange;
+    font-family: AppleSystemUIFont, serif;
+}
+
+th, td {
+    border-bottom: 1px solid gray;
+    padding: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td {
+    text-align: center;
+}
+
+.content1 {
+    border: 1px solid red;
+    display: inline;
+}
+
+.content2 {
+    border: 1px solid blue;
+    display: block;
+}
+
+.position1 {
+    border: 1px solid red;
+    position: sticky;
+    top: 50px;
+    left: 50px;
+}
+
+.position2 {
+    border: 1px solid blue;
+    /*position: fixed;*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 2000px;
+    border: 1px solid black;
+}
+
+.em-container {
+    font-size: 1.5em;
+    height: calc(50vh - 30px);
+}
+
+.em {
+    font-size: 1.5rem;
+    height: max(60px, 50vh);
+}

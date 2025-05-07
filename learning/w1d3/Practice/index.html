@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <style>
+        body {
+            background-color: #63738b;
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card {
+            background-color: #f2f3f7;
+            width: clamp(200px, 60vw, 1200px);
+          padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        .green {
+            color: green;
+        }
+
+        p {
+          color: #b1b2b4;
+          font-size: 15px;
+          text-align: center;
+        }
+
+        .input_text {
+          height: 2.7em;
+          padding: 5px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .grid_container {
+          /*background-color: #747bff;*/
+          display: grid;
+          grid-template-columns: 200px 200px;
+          justify-content: center;
+          grid-row-gap: 1em;
+            grid-column-gap: 1em;
+          margin-bottom: 1.5em;
+
+        }
+
+        .not-name {
+          grid-column: span 2;
+          width: 100%;
+        }
+
+        .not-name .input_text {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        button {
+          width: clamp(200px, 80%, 400px);
+          margin-top: 1.5em;
+          height: 3em;
+          background-color: #55ac54;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-weight: bold;
+            display: block;
+        }
+
+        .sign_in {
+          color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>Register</h1>
+        <p>Create your account. It's free and only takes a minute.</p>
+
+        <form>
+          <div class="grid_container">
+            <label><input type="text" class="input_text" placeholder="First Name"
+                                                    id="first_name"></label>
+            <label><input type="text" class="input_text" placeholder="Last Name" id="last_name"></label>
+            <label class="not-name"><input type="text" class="input_text" placeholder="Email"></label>
+            <label class="not-name"><input type="text" class="input_text" placeholder="Password"></label>
+            <label class="not-name"><input type="text" class="input_text" placeholder="Confirm Password"></label>
+          </div>
+
+            <label><input type="checkbox"> I accept the <span class="green">Terms of Use</span> & <span class="green">Privacy Policy</span></label>
+            <button>Register Now</button>
+        </form>
+    </div>
+    <div>
+        <p class="sign_in">Already have an account? <a href="#" class="sign_in">Sign in</a></p>
+    </div>
+
+</div>
+</body>
+</html>
