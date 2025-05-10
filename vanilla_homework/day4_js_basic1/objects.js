@@ -7,6 +7,14 @@ export function combineObjects(obj1, obj2) {
   // Example 2: const obj1 = {name: 'Alice', age: 25};
   // const obj2 = {name: 'John', age: 21};
   // Expected output: {name: 'John', age: 21}
+    const result = {};
+    for (const key in obj1) {
+        result[key] = obj1[key];
+    }
+    for (const key in obj2) {
+        result[key] = obj2[key];
+    }
+    return result;
 }
 
 export function changeValueOf(obj, key, value) {
@@ -18,6 +26,8 @@ export function changeValueOf(obj, key, value) {
   // Example 2: const obj = {name: 'Alice', age: 25};
   // changeValueOf(obj, 'job', 'teacher');
   // Expected obj: {name: 'Alice', age: 25, job: 'teacher'}
+    obj[key] = value;
+    return obj;
 }
 
 export function cancelExpiredEvents(events) {
@@ -30,6 +40,14 @@ export function cancelExpiredEvents(events) {
   //   event3: {name: 'Christmas Party', date: '2024-12-25', isCanceled: false}
   // ];
   // Expected events: // an array of events, but event1 and event2 are canceled, event3 is not canceled
+
+    for (const e of events) {
+        // if (Date.parse(e.date) < Date.now()) {
+        if (Date.parse(e.date) < Date.parse("2024-12-24")) {
+            e.isCanceled = true;
+        }
+    }
+    return events;
 }
 
 export function findEventByType(events, type) {
@@ -41,4 +59,11 @@ export function findEventByType(events, type) {
   // ];
   // findEventByType(events, 'private');
   // Expected output: [{name: 'Birthday Party', type: 'private'}, {name: 'Christmas Party', type: 'private'}]
+    const result = [];
+    for (const e of events) {
+        if (e.type === type) {
+            result.push(e);
+        }
+    }
+    return result;
 }
