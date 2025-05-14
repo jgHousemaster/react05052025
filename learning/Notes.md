@@ -26,3 +26,7 @@
     <script src="script.js"></script>
 </body>
 ```
+
+## Other
+
+- `()`: parenthesis, `[]`: square bracket, `{}`: curly brace
