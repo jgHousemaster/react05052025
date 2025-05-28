@@ -9,12 +9,27 @@ import { StudentType, StudentFn, StudentClass } from "./Student";
 */
 
 // implement a StudentsList component here
-export function StudentsListFn() {
-  return <div>Students List</div>;
+export function StudentsListFn({ students }) {
+  return (
+    <div>
+      Students List Function{" "}
+      {students.map((student) => {
+        return <StudentFn student={student} />;
+      })}
+    </div>
+  );
 }
 
 export class StudentsListClass extends Component {
   render() {
-    return <div>Students List</div>;
+    const { students } = this.props;
+    return (
+      <div>
+        Students List Class{" "}
+        {students.map((student) => {
+          return <StudentFn student={student} />;
+        })}
+      </div>
+    );
   }
 }
