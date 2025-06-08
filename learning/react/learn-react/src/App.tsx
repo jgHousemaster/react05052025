@@ -1,18 +1,10 @@
 // import { useState } from "react";
 import "./App.css";
-// import { Task } from "./Task";
-import Demo from "./demo/demo";
-import Event from "./w2d12/event";
-import D13 from "./w2d13";
-import Counter from "./demo/Counter"
-
+import D17 from "./w4d17/index";
 function App() {
-  
-
   return (
     <div>
-      <Counter />
-      {/* <Event /> */}
+      <D17 />
     </div>
   );
 }

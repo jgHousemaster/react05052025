@@ -1,8 +1,9 @@
 // import usersJSON from "./user"
 import { useEffect, useState } from "react";
 import usersJSON from "./users.json";
+import './style.css'
 
-async function sleep(millis) {
+export async function sleep(millis) {
     await new Promise(resolve => setTimeout(resolve, millis));
 }
 
