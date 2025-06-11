@@ -1,10 +1,10 @@
 // import { useState } from "react";
 import "./App.css";
-import D17 from "./w4d17/index";
+import ReduxTodo from "./ReduxTodo/index"
 function App() {
   return (
     <div>
-      <D17 />
+      <ReduxTodo />
     </div>
   );
 }

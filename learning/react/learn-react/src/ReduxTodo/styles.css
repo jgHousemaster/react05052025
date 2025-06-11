@@ -1,0 +1,125 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  align-self: center;
+}
+body {
+  background-color: #b3b4e8;
+}
+
+.card {
+  background-color: white;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.myForm {
+  display: flex;
+  margin-bottom: 10px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.myForm input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.myForm button {
+  padding: 10px 14px;
+  background-color: #6764cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 50px;
+  margin-left: 5px;
+}
+
+.myForm button:hover {
+  background-color: #8d8ae5;
+}
+
+.todolist {
+  margin: 10px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 35px;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task span {
+  flex: 1;
+  text-align: start;
+}
+
+.task button {
+  border-style: hidden;
+  padding: 6px 15px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.task button:hover {
+  background-color: #cfcdcd;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.backBtn {
+  border-radius: 40px;
+  height: 40px;
+  padding: 0px 5px 0px 0px;
+  width: 50px;
+  color: white;
+  background-color: #1976d2;
+  
+}
+
+.backBtn:hover {
+  background-color: #6badee;
+  color:black;
+}
+
+.backBtn:active {
+  padding: 7px 10px;
+  border-radius: 30px;
+  width: 70px;
+  color: white;
+  background-color: #1976d2;
+  
+}
+
+.myTitle {
+  margin: 20px;
+  font-size:xx-large;
+  font-weight: bold;
+}
+
+.deleteBtn{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+}
