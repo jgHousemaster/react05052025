@@ -94,6 +94,7 @@ a {
   width: 50px;
   color: white;
   background-color: #1976d2;
+  border: none;
   
 }
 
@@ -103,9 +104,6 @@ a {
 }
 
 .backBtn:active {
-  padding: 7px 10px;
-  border-radius: 30px;
-  width: 70px;
   color: white;
   background-color: #1976d2;
   
@@ -122,4 +120,23 @@ a {
   color: white;
   font-weight: bold;
   margin: 10px;
+}
+
+.saveBtn{
+  background-color: rgb(7, 192, 7);
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.formRow {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+label {
+  width: 100px;
+  text-align: end;
+  padding-right: 10px;
 }

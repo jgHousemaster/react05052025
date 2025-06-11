@@ -30,6 +30,13 @@ const taskReducer = (
           return task.id !== action.payload
         }),
       };
+      case ACTION_TYPES.EDIT_TASK:
+        return {
+          ...state,
+          tasks: state.tasks.map((task) =>
+          task.id === action.payload.id ? action.payload : task
+        ),
+        }
     case ACTION_TYPES.FETCH_REQUEST:
       return {
         ...state,

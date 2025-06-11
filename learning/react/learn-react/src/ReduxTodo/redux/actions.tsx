@@ -68,6 +68,28 @@ export const completeTask = (id: string) => {
   };
 };
 
+export const editTask = (newTask: task) => {
+  return async (dispatch) => {
+    try {
+      const res = await fetch(url + `/${newTask.id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ ...newTask }),
+      });
+      if (!res.ok) {
+        throw new Error("Update failed");
+      }
+      const updatedTask = await res.json();
+
+      dispatch({
+        type: ACTION_TYPES.EDIT_TASK,
+        payload: updatedTask,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
 export const deleteTask = (id: string) => {
   return async (dispatch) => {
     try {
