@@ -28,7 +28,7 @@ function ListContainer(props) {
 
   return (
     <div className="card">
-      <h1>To Do List</h1>
+      <h2>To Do List</h2>
       <span className="myForm">
         <input
           value={inputName}
