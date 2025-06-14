@@ -11,7 +11,7 @@ import Task from "./Task";
 
 function ListContainer(props) {
   const [inputName, setInputName] = useState("");
-  const {fetchTasks} = props
+  const {fetchTasks} = props // destructure
 
   useEffect(() => {
     fetchTasks()
@@ -22,6 +22,7 @@ function ListContainer(props) {
     setInputName("");
   };
 
+    // loading / error / success
   if (!props.loading && props.error !== "") {
     return <div className="card">ERROR: {props.error}</div>
   }

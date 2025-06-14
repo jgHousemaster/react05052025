@@ -15,22 +15,23 @@ const TaskDetail = (props) => {
   // for go back router
   const history = useHistory();
   // task id
-  const { id } = useParams();
+  const { id } = useParams(); // params may be different
   // initialize
-  const { fetchTasks } = props;
+  const { fetchTasks, tasks, editTask, completeTask } = props; // destructure them
   useEffect(() => {
     fetchTasks();
-  }, [fetchTasks]);
-  const task = props.tasks.filter((task) => {
+  }, []);
+
+  const task = tasks.find((task) => {
     return task.id === id;
-  })[0];
+  });
   // Edit feature
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(false); // edit => isEditing
   const [name, setName] = useState(task.name);
   const [description, setDescription] = useState(task.description);
   const handleSave = (e) => {
     e.preventDefault();
-    props.editTask({ ...task, name: name, description: description });
+    editTask({ ...task, name, description });
     setEdit(false);
   };
 
@@ -44,26 +45,24 @@ const TaskDetail = (props) => {
           <div className="formRow">
             <label>
               <b>Task: </b>
+              <input
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
             </label>
-            <input
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
           </div>
 
           <div className="formRow">
             <label>
               <b>Description: </b>
+              <input
+                value={description}
+                placeholder="Add description..."
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </label>
-            <input
-              value={description}
-              placeholder="Add description..."
-              onChange={(e) => {
-                setDescription(e.target.value);
-              }}
-            />
           </div>
           <button className="saveBtn" type="submit">
             Save
@@ -92,36 +91,39 @@ const TaskDetail = (props) => {
           color: task.completed ? "grey" : "black",
         }}
       >
-        Task: {task.name}{" "}
+        {/* {Use class Name} */}
+        Task: {task.name}
+      </h2>
+
+      <label>
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => {
-            props.completeTask(task.id);
+            completeTask(task.id);
           }}
         />
-      </h2>
+        Complete
+      </label>
+
       <p>
         <b>Description: </b>
-        {task.description === "" ? "No description" : task.description}
+        {/* {task.description === "" ? "No description" : task.description} */}
+        {task.description || "No description"}
       </p>
       <p>
         <b>Date: </b>
         {task.date}
       </p>
 
-      <button
-        onClick={() => {
-          setEdit(true);
-        }}
-      >
+      <button onClick={()=>setEdit(true)}>
         Edit
       </button>
       <button
         className="deleteBtn"
         onClick={() => {
           props.deleteTask(task.id);
-          history.push("/");
+          history.push("/"); // May be different, look up every time
         }}
       >
         Delete

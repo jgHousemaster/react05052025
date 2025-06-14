@@ -1,10 +1,10 @@
 // import { useState } from "react";
 import "./App.css";
-import ReduxTodo from "./ReduxTodo/index"
+import Performance from "./Performance";
 function App() {
   return (
     <div>
-      <ReduxTodo />
+      <Performance />
     </div>
   );
 }
