@@ -7,6 +7,8 @@ app.use(express.json())
 
 const todoRouter = require("./routes/todo")
 app.use("/todos", todoRouter)
+const userRouter = require("./routes/user")
+app.use("/users", userRouter)
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
